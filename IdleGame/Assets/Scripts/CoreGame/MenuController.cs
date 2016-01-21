@@ -12,8 +12,8 @@ public class MenuController : MonoBehaviour {
     public Canvas kingsCabin;
     public Canvas village;
 
-    private bool cabinActive = true;
-    private bool villageActive = false;
+    //private bool cabinActive = true;
+    //private bool villageActive = false;
 
 	// Use this for initialization
 	void Start () {
