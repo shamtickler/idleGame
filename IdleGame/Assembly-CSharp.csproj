@@ -46,6 +46,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\CoreGame\Buildings\Cart.cs" />
+     <Compile Include="Assets\Scripts\CoreGame\Buildings\Farms.cs" />
+     <Compile Include="Assets\Scripts\CoreGame\Buildings\HuntersLodge.cs" />
+     <Compile Include="Assets\Scripts\CoreGame\Buildings\IronMines.cs" />
+     <Compile Include="Assets\Scripts\CoreGame\Buildings\Quarry.cs" />
+     <Compile Include="Assets\Scripts\CoreGame\Buildings\Tannery.cs" />
      <Compile Include="Assets\Scripts\CoreGame\Buildings\WoodCutters.cs" />
      <Compile Include="Assets\Scripts\CoreGame\HoverTextController.cs" />
      <Compile Include="Assets\Scripts\CoreGame\MenuController.cs" />
@@ -56,6 +61,7 @@
      <Compile Include="Assets\Scripts\CoreGame\VillageController.cs" />
      <Compile Include="Assets\Scripts\SpecialEffects\BuildingPlacementController.cs" />
      <Compile Include="Assets\Scripts\SpecialEffects\ButtonTextUnderline.cs" />
+     <Compile Include="Assets\Scripts\SpecialEffects\ExitGame.cs" />
      <Compile Include="Assets\Scripts\SpecialEffects\FadeTextOverTime.cs" />
      <Compile Include="Assets\Scripts\SpecialEffects\HyperSpeedController.cs" />
  <Reference Include="UnityEngine.UI">

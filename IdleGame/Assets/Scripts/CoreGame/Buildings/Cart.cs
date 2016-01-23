@@ -28,7 +28,7 @@ public class Cart : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     // Update is called once per frame
     void Update()
     {
-        cost1 = 150 + 100 * VillageController.carts;
+        cost1 = 100 + 100 * VillageController.carts;
     }
 
     //code for when the mouse enters the element goes here
@@ -52,6 +52,8 @@ public class Cart : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public void Buy()
     {
         ProductionController.gameControllerObject.GetComponent<ProductionController>().Purchase(purchaseName, resource1, resource2, resource3, resource4, cost1, cost2, cost3, cost4);
+        ProductionController.gameControllerObject.GetComponent<HoverTextController>().DeActivate();
+
     }
 
 

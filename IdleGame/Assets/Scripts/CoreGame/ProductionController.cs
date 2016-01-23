@@ -31,7 +31,7 @@ public class ProductionController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //controls how much wood is collectable
-        collectableWoodAmmount = 50 + VillageController.carts * 50;
+        collectableWoodAmmount = 50 + VillageController.carts * 20;
 
         //controls if "collectWood" button is available for use
         collectWoodSlider.value = collectWoodTimer;
@@ -49,7 +49,7 @@ public class ProductionController : MonoBehaviour {
     {
         ResourceController.wood += collectableWoodAmmount;
         collectWoodButton.interactable = false;
-        collectWoodTimer = 10;
+        collectWoodTimer = 20;
         NF.AddNotification("Some villagers scavanged a couple branches and twigs.");
     }
 
@@ -63,7 +63,37 @@ public class ProductionController : MonoBehaviour {
     public void BuildWoodCutters()
     {
         VillageController.woodCutters += 1;
-        NF.AddNotification("The woodcutters shack will continue to produce wood for us.");
+        NF.AddNotification("The woodcutters will continue to provide.");
+    }
+
+    public void BuildHunters()
+    {
+        VillageController.hunters += 1;
+        NF.AddNotification("Hunters will bring home meat and furs for the people.");
+    }
+
+    public void BuildQuarry()
+    {
+        VillageController.quarries += 1;
+        NF.AddNotification("Stone can be extracted from the earth.");
+    }
+
+    public void BuildTannery()
+    {
+        VillageController.tannery += 1;
+        NF.AddNotification("The tanner will turn our furs into leather.");
+    }
+
+    public void BuildIronMine()
+    {
+        VillageController.ironMines += 1;
+        NF.AddNotification("We will make many things with this iron.");
+    }
+
+    public void BuildFarms()
+    {
+        VillageController.farms += 1;
+        NF.AddNotification("Our farms will blanket the land");
     }
 
 
@@ -297,6 +327,31 @@ public class ProductionController : MonoBehaviour {
         if ((_name == "WoodCutters"))
         {
             BuildWoodCutters();
+        }
+
+        if (_name == "Hunters")
+        {
+            BuildHunters();
+        }
+
+        if (_name == "Quarries")
+        {
+            BuildQuarry();
+        }
+
+        if (_name == "Tannery")
+        {
+            BuildTannery();
+        }
+
+        if (_name == "IronMine")
+        {
+            BuildIronMine();
+        }
+
+        if (_name == "Farm")
+        {
+            BuildFarms();
         }
 
 
