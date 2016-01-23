@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\CoreGame\Buildings\Cart.cs" />
+     <Compile Include="Assets\Scripts\CoreGame\Buildings\WoodCutters.cs" />
      <Compile Include="Assets\Scripts\CoreGame\HoverTextController.cs" />
      <Compile Include="Assets\Scripts\CoreGame\MenuController.cs" />
      <Compile Include="Assets\Scripts\CoreGame\NotificationFeed.cs" />

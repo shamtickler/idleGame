@@ -5,7 +5,8 @@ using UnityEngine.EventSystems;
 
 public class OnHoverText : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler{
 
-    public string purchaseName;
+    public Vector3 offset;
+    private Transform temp;
 
     public string resource1;
     public string resource2;
@@ -17,16 +18,10 @@ public class OnHoverText : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public float cost3;
     public float cost4;
 
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    void Start()
+    {
+        //Transform _setLocation = new Transform();
+    }
 
     //code for when the mouse enters the element goes here
     public void OnPointerEnter(PointerEventData eventData)
@@ -35,7 +30,9 @@ public class OnHoverText : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
         ProductionController.gameControllerObject.GetComponent<HoverTextController>().ChangeDisplay(resource1, resource2, resource3, resource4, cost1, cost2, cost3, cost4);
 
-        ProductionController.gameControllerObject.GetComponent<HoverTextController>().SetLocation(gameObject.transform);
+        temp = gameObject.transform;
+        temp.position += offset;
+        ProductionController.gameControllerObject.GetComponent<HoverTextController>().SetLocation(temp);
 
     }
 
@@ -45,11 +42,5 @@ public class OnHoverText : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         ProductionController.gameControllerObject.GetComponent<HoverTextController>().DeActivate();
 
     }
-
-    public void Buy()
-    {
-        //ProductionController.gameControllerObject.GetComponent<ProductionController>().Purchase(purchaseName);
-    }
-
 
 }

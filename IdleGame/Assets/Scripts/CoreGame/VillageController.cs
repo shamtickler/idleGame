@@ -12,6 +12,9 @@ public class VillageController : MonoBehaviour {
     public static float tannery;
     public static float woodCutters;
 
+
+    [SerializeField]
+    private Text cartsTitle;
     [SerializeField]
     private Text farmsTitle;
     [SerializeField]
@@ -25,6 +28,9 @@ public class VillageController : MonoBehaviour {
     [SerializeField]
     private Text woodCuttersTitle;
 
+
+    [SerializeField]
+    private Text cartsValue;
     [SerializeField]
     private Text farmsValue;
     [SerializeField]
@@ -45,6 +51,17 @@ public class VillageController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+
+        //check carts values
+        if (carts > 0)
+        {
+            cartsTitle.gameObject.SetActive(true);
+        }
+        else
+        {
+            cartsTitle.gameObject.SetActive(false);
+        }
 
         //check farms values
         if (farms > 0)
@@ -111,6 +128,7 @@ public class VillageController : MonoBehaviour {
         }
 
         //update all the village building values
+        cartsValue.text = ((int)carts).ToString();
         farmsValue.text = ((int)farms).ToString();
         huntersValue.text = ((int)hunters).ToString();
         ironMinesValue.text = ((int)ironMines).ToString();

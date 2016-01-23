@@ -14,7 +14,7 @@ public class HyperSpeedController : MonoBehaviour {
         if (hyperspeed == false)
         {
             hyperspeed = true;
-            Time.timeScale = 2.5f;
+            Time.timeScale = 5.0f;
             hyperText.text = "Classic";
         }
         else

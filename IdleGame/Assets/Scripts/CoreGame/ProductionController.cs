@@ -60,6 +60,13 @@ public class ProductionController : MonoBehaviour {
 
     }//end BuildCart()
 
+    public void BuildWoodCutters()
+    {
+        VillageController.woodCutters += 1;
+        NF.AddNotification("The woodcutters shack will continue to produce wood for us.");
+    }
+
+
 
     public void Purchase(string _item, string _resource1, string _resource2, string _resource3, string _resource4, float _cost1, float _cost2, float _cost3, float _cost4)
     {
@@ -286,6 +293,13 @@ public class ProductionController : MonoBehaviour {
         {
             BuildCart();
         }
-    }
+
+        if ((_name == "WoodCutters"))
+        {
+            BuildWoodCutters();
+        }
+
+
+    }//end checking purchaseName
 
 }
