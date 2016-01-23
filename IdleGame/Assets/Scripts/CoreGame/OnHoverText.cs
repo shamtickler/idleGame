@@ -48,7 +48,7 @@ public class OnHoverText : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void Buy()
     {
-        ProductionController.gameControllerObject.GetComponent<ProductionController>().Purchase(purchaseName);
+        //ProductionController.gameControllerObject.GetComponent<ProductionController>().Purchase(purchaseName);
     }
 
 

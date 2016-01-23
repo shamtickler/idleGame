@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class VillageController : MonoBehaviour {
 
+    public static float carts;
     public static float farms;
     public static float hunters;
     public static float ironMines;
