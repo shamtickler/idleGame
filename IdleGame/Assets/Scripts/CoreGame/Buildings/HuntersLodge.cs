@@ -32,16 +32,7 @@ public class HuntersLodge : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     {
         cost1 = 500 + 200 * VillageController.hunters;
 
-        if (delayTime <= 0)
-        {
-            ResourceController.meat += VillageController.hunters * 10;
-            ResourceController.fur += VillageController.hunters * 2;
-            delayTime = startingDelayTime;
-        }
-        else
-        {
-            delayTime -= Time.deltaTime;
-        }
+        
     }
 
     //code for when the mouse enters the element goes here

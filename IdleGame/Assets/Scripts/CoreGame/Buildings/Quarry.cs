@@ -33,16 +33,7 @@ public class Quarry : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         cost1 = 500 + 200 * VillageController.quarries;
         cost2 = 50 + 50 * VillageController.quarries;
 
-        if (delayTime <= 0)
-        {
-            ResourceController.stone += VillageController.quarries * 25;
-            ResourceController.flint += VillageController.quarries * 2;
-            delayTime = startingDelayTime;
-        }
-        else
-        {
-            delayTime -= Time.deltaTime;
-        }
+        
     }
 
     //code for when the mouse enters the element goes here

@@ -11,6 +11,7 @@ public class VillageController : MonoBehaviour {
     public static float quarries;
     public static float tannery;
     public static float woodCutters;
+    public static float woodenHuts;
 
 
     [SerializeField]

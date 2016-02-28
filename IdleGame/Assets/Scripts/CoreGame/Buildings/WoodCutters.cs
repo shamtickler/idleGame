@@ -32,15 +32,6 @@ public class WoodCutters : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     {
         cost1 = 300 + 200 * VillageController.woodCutters;
 
-        if (delayTime <= 0)
-        {
-            ResourceController.wood += VillageController.woodCutters * 25;
-            delayTime = startingDelayTime;
-        }
-        else
-        {
-            delayTime -= Time.deltaTime;
-        }
     }
 
     //code for when the mouse enters the element goes here

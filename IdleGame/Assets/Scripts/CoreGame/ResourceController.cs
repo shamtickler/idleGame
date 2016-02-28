@@ -187,4 +187,118 @@ public class ResourceController : MonoBehaviour {
 
 
     }//end of Update()
+
+//use this for subtracting resources on an individual basis
+public void SubtractResource(string _resourceName, int _ammount)
+    {
+        if(_resourceName == "Cloth")
+        {
+            cloth -= _ammount;
+            if (cloth < 0) { cloth = 0; }
+        }
+        else if(_resourceName == "Coal")
+        {
+            coal -= _ammount;
+            if (coal < 0) { coal = 0; }
+        }
+        else if (_resourceName == "Flint")
+        {
+            flint -= _ammount;
+            if (flint < 0) { flint = 0; }
+        }
+        else if (_resourceName == "Food")
+        {
+            food -= _ammount;
+            if (food < 0) { food = 0; }
+        }
+        else if (_resourceName == "Fur")
+        {
+            fur -= _ammount;
+            if (fur < 0) { fur = 0; }
+        }
+        else if (_resourceName == "Iron")
+        {
+            iron -= _ammount;
+            if (iron < 0) { iron = 0; }
+        }
+        else if (_resourceName == "Leather")
+        {
+            leather -= _ammount;
+            if (leather < 0) { leather = 0; }
+        }
+        else if (_resourceName == "Meat")
+        {
+            meat -= _ammount;
+            if (meat < 0) { meat = 0; }
+        }
+        else if (_resourceName == "Scales")
+        {
+            scales -= _ammount;
+            if (scales < 0) { scales = 0; }
+        }
+        else if (_resourceName == "Stone")
+        {
+            stone -= _ammount;
+            if (stone < 0) { stone = 0; }
+        }
+        else if (_resourceName == "Wood")
+        {
+            wood -= _ammount;
+            if (wood < 0) { wood = 0; }
+        }
+
+    }//end of subtract resource
+
+    public void AddResource(string _resourceName, int _ammount)
+    {
+
+        if (_resourceName == "Cloth")
+        {
+            cloth += _ammount;
+        }
+        else if (_resourceName == "Coal")
+        {
+            coal += _ammount;
+        }
+        else if (_resourceName == "Flint")
+        {
+            flint += _ammount;
+        }
+        else if (_resourceName == "Food")
+        {
+            food += _ammount;
+        }
+        else if (_resourceName == "Fur")
+        {
+            fur += _ammount;
+        }
+        else if (_resourceName == "Iron")
+        {
+            iron += _ammount;
+        }
+        else if (_resourceName == "Leather")
+        {
+            leather += _ammount;
+        }
+        else if (_resourceName == "Meat")
+        {
+            meat += _ammount;
+        }
+        else if (_resourceName == "Scales")
+        {
+            scales += _ammount;
+        }
+        else if (_resourceName == "Stone")
+        {
+            stone += _ammount;
+        }
+        else if (_resourceName == "Wood")
+        {
+            wood += _ammount;
+        }
+
+    }//end of AddResource
+
+
+
 }

@@ -38,19 +38,7 @@ public class IronMines : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         cost2 = 600 + 200 * VillageController.ironMines;
         cost3 = 30 + 20 * VillageController.ironMines;
 
-        if (delayTime <= 0)
-        {
-            
-            ResourceController.iron += VillageController.ironMines * 10;
-           
-            //resets the timer
-            delayTime = startingDelayTime;
-
-        }
-        else
-        {
-            delayTime -= Time.deltaTime;
-        }
+        
     }
 
     //code for when the mouse enters the element goes here

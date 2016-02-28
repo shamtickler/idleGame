@@ -33,21 +33,7 @@ public class Tannery : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         cost1 = 600 + 200 * VillageController.tannery;
         cost2 = 400 + 150 * VillageController.tannery;
 
-        if (delayTime <= 0)
-        {
-            if (ResourceController.fur > 15)
-            {
-                ResourceController.leather += VillageController.tannery * 2;
-                ResourceController.fur -= VillageController.tannery * 15;
-            }
-            //resets the timer
-            delayTime = startingDelayTime;
-
-        }
-        else
-        {
-            delayTime -= Time.deltaTime;
-        }
+        
     }
 
     //code for when the mouse enters the element goes here

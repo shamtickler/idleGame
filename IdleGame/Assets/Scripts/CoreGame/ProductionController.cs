@@ -17,8 +17,6 @@ public class ProductionController : MonoBehaviour {
 
 
 
-
-
 	// Use this for initialization
 	void Start () {
         gameControllerObject = gameObject;
@@ -26,6 +24,7 @@ public class ProductionController : MonoBehaviour {
         collectWoodTimer = 0;
         collectWoodButton.interactable = true;
         collectWoodSlider.value = collectWoodTimer;
+        StartCoroutine(ProductionLoop());
 	}
 	
 	// Update is called once per frame
@@ -63,13 +62,13 @@ public class ProductionController : MonoBehaviour {
     public void BuildWoodCutters()
     {
         VillageController.woodCutters += 1;
-        NF.AddNotification("The woodcutters will continue to provide.");
+        NF.AddNotification("The woodcutters will continue to produce wood.");
     }
 
     public void BuildHunters()
     {
         VillageController.hunters += 1;
-        NF.AddNotification("Hunters will bring home meat and furs for the people.");
+        NF.AddNotification("Hunters will bring home meat and furs for our people.");
     }
 
     public void BuildQuarry()
@@ -81,19 +80,25 @@ public class ProductionController : MonoBehaviour {
     public void BuildTannery()
     {
         VillageController.tannery += 1;
-        NF.AddNotification("The tanner will turn our furs into leather.");
+        NF.AddNotification("The tanner will turn your furs into leather.");
     }
 
     public void BuildIronMine()
     {
         VillageController.ironMines += 1;
-        NF.AddNotification("We will make many things with this iron.");
+        NF.AddNotification("The people will make many things with this iron.");
     }
 
     public void BuildFarms()
     {
         VillageController.farms += 1;
-        NF.AddNotification("Our farms will blanket the land");
+        NF.AddNotification("You watch as the land is plowed.");
+    }
+
+    public void BuildWoodenHut()
+    {
+        VillageController.woodenHuts += 1;
+        NF.AddNotification("More people can live here.");
     }
 
 
@@ -124,7 +129,7 @@ public class ProductionController : MonoBehaviour {
                 if (costs[i] > ResourceController.cloth)
                 {
                     canPurchase += 1;
-                    NF.AddNotification("I will need more cloth for that.");
+                    NF.AddNotification("You will need more cloth for that.");
                 }
             }//end check for cloth
 
@@ -133,7 +138,7 @@ public class ProductionController : MonoBehaviour {
                 if (costs[i] > ResourceController.coal)
                 {
                     canPurchase += 1;
-                    NF.AddNotification("I will need more coal for that.");
+                    NF.AddNotification("You will need more coal for that.");
 
                 }
             }//end check for coal
@@ -143,7 +148,7 @@ public class ProductionController : MonoBehaviour {
                 if (costs[i] > ResourceController.flint)
                 {
                     canPurchase += 1;
-                    NF.AddNotification("I will need more flint for that.");
+                    NF.AddNotification("You will need more flint for that.");
 
                 }
             }//end check for flint
@@ -153,7 +158,7 @@ public class ProductionController : MonoBehaviour {
                 if (costs[i] > ResourceController.food)
                 {
                     canPurchase += 1;
-                    NF.AddNotification("I will need more food for that.");
+                    NF.AddNotification("You will need more food for that.");
 
                 }
             }//end check for food
@@ -163,7 +168,7 @@ public class ProductionController : MonoBehaviour {
                 if (costs[i] > ResourceController.fur)
                 {
                     canPurchase += 1;
-                    NF.AddNotification("I will need more fur for that.");
+                    NF.AddNotification("You will need more fur for that.");
 
                 }
             }//end check for fur
@@ -173,7 +178,7 @@ public class ProductionController : MonoBehaviour {
                 if (costs[i] > ResourceController.iron)
                 {
                     canPurchase += 1;
-                    NF.AddNotification("I will need more iron for that.");
+                    NF.AddNotification("You will need more iron for that.");
 
                 }
             }//end check for iron
@@ -183,7 +188,7 @@ public class ProductionController : MonoBehaviour {
                 if (costs[i] > ResourceController.leather)
                 {
                     canPurchase += 1;
-                    NF.AddNotification("I will need more leather for that.");
+                    NF.AddNotification("You will need more leather for that.");
 
                 }
             }//end check for leather
@@ -193,7 +198,7 @@ public class ProductionController : MonoBehaviour {
                 if (costs[i] > ResourceController.meat)
                 {
                     canPurchase += 1;
-                    NF.AddNotification("I will need more meat for that.");
+                    NF.AddNotification("You will need more meat for that.");
 
                 }
             }//end check for meat
@@ -203,7 +208,7 @@ public class ProductionController : MonoBehaviour {
                 if (costs[i] > ResourceController.scales)
                 {
                     canPurchase += 1;
-                    NF.AddNotification("I will need more scales for that.");
+                    NF.AddNotification("You will need more scales for that.");
 
                 }
             }//end check for scales
@@ -213,7 +218,7 @@ public class ProductionController : MonoBehaviour {
                 if (costs[i] > ResourceController.stone)
                 {
                     canPurchase += 1;
-                    NF.AddNotification("I will need more stone for that.");
+                    NF.AddNotification("You will need more stone for that.");
 
                 }
             }//end check for stone
@@ -223,7 +228,7 @@ public class ProductionController : MonoBehaviour {
                 if (costs[i] > ResourceController.wood)
                 {
                     canPurchase += 1;
-                    NF.AddNotification("I will need more wood for that.");
+                    NF.AddNotification("You will need more wood for that.");
 
                 }
             }//end check for wood
@@ -356,5 +361,35 @@ public class ProductionController : MonoBehaviour {
 
 
     }//end checking purchaseName
+
+
+    IEnumerator ProductionLoop()
+    {
+        while (true)
+        { 
+            yield return new WaitForSeconds(5);
+            //production from woodcutters
+            ResourceController.wood += VillageController.woodCutters * 25;
+            //production from farms
+            ResourceController.food += VillageController.farms * 40;
+            //production from iron mines
+            ResourceController.iron += VillageController.ironMines * 10;
+            //production from hunters
+            ResourceController.meat += VillageController.hunters * 10;
+            ResourceController.fur += VillageController.hunters * 2;
+            //production from Quarry
+            ResourceController.stone += VillageController.quarries * 25;
+            ResourceController.flint += VillageController.quarries * 2;
+            //production from tannery
+            if (ResourceController.fur > 15)
+            {
+                ResourceController.leather += VillageController.tannery * 2;
+                ResourceController.fur -= VillageController.tannery * 15;
+            }
+
+        }
+
+
+    }
 
 }

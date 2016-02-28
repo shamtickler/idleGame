@@ -37,19 +37,7 @@ public class Farms : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         cost1 = 200 + 100 * VillageController.farms;
         cost2 = 200 + 100 * VillageController.farms;
 
-        if (delayTime <= 0)
-        {
-
-            ResourceController.food += VillageController.farms * 40;
-
-            //resets the timer
-            delayTime = startingDelayTime;
-
-        }
-        else
-        {
-            delayTime -= Time.deltaTime;
-        }
+        
     }
 
     //code for when the mouse enters the element goes here
